@@ -4,8 +4,11 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "node-sass": "^4.5.3",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.5.8",
+    "webfonts-loader": "^1.2.0",
     "webpack": "^2.6.1"
   }
 }

@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('./css/[name].css');
+const extractFont = new ExtractTextPlugin('./fonts/[name].[ext]');
 
 module.exports = {
   context: __dirname,
@@ -20,13 +21,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractCSS.extract({
-          use: 'css-loader!sass-loader',
+          use: 'raw-loader!sass-loader',
+        }),
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: extractFont.extract({
+          use: 'file-loader?name=./fonts/[name].[ext]',
         }),
       }
     ]
   },
   plugins: [
-    extractCSS
+    extractCSS,
+    extractFont
   ],
   devtool: "source-map",
   devServer: {
