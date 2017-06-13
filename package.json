@@ -10,5 +10,8 @@
     "url-loader": "^0.5.8",
     "webfonts-loader": "^1.2.0",
     "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

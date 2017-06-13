@@ -36,7 +36,15 @@ module.exports = {
     extractCSS,
     extractFont
   ],
-  devtool: "source-map",
+  resolve: {
+    modules: [
+      'node_modules'
+    ],
+    alias: {
+      jquery: 'jquery/src/jquery'
+    }
+  },
+  devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   }
